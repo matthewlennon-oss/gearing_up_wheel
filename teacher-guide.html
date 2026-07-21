@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Guide - Wheel Radius Force Spinner</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: #fff; }
+    .guide { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .guide h1 { font-size: 1.8rem; }
+    .guide h2 { margin-top: 1.5rem; border-top: 2px solid var(--line); padding-top: 1rem; }
+    .print-actions { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    .guide table { min-width: 0; }
+    @media print {
+      .print-actions { display: none; }
+      .guide { padding: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="guide">
+    <div class="print-actions">
+      <a href="index.html">Back to simulator</a>
+      <button class="spin-button" onclick="window.print()" type="button">Print guide</button>
+    </div>
+
+    <h1>Teacher Guide: Wheel Radius Force Spinner</h1>
+    <p>This simplified simulation focuses only on how wheel radius affects the force needed to turn the axle.</p>
+
+    <h2>Hidden Model Settings</h2>
+    <table>
+      <thead><tr><th>Setting</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Axle radius</td><td>2 cm</td></tr>
+        <tr><td>Resistance/load</td><td>60 N</td></tr>
+        <tr><td>Run length</td><td>1 turn</td></tr>
+        <tr><td>Friction</td><td>Ignored: ideal model</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Expected Readings</h2>
+    <table>
+      <thead><tr><th>Wheel radius</th><th>Force needed</th><th>Later mechanical advantage</th></tr></thead>
+      <tbody>
+        <tr><td>4 cm</td><td>30 N</td><td>2</td></tr>
+        <tr><td>8 cm</td><td>15 N</td><td>4</td></tr>
+        <tr><td>12 cm</td><td>10 N</td><td>6</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Worksheet Answers</h2>
+    <p><strong>Q1:</strong> Award one mark each for correctly labelling the wheel and axle.</p>
+    <p><strong>Q2:</strong> 12 cm.</p>
+    <p><strong>Q3:</strong> 4 cm = 30 N, 8 cm = 15 N, 12 cm = 10 N.</p>
+    <p><strong>Q4:</strong> Example: As wheel radius increased from 4 cm to 12 cm, the force needed decreased from 30 N to 10 N.</p>
+    <p><strong>Q5:</strong> A larger wheel lets a smaller effort turn the axle, but the hand would move through a greater distance.</p>
+    <p><strong>Q6:</strong> Mechanical advantage values are 2, 4 and 6.</p>
+
+    <h2>Source Notes</h2>
+    <p>The science basis is the lesson content: a wheel and axle are attached, the axle turns with the wheel, and effort applied to a larger wheel can reduce the force needed to turn the axle. [S01]</p>
+    <p>The worksheet uses the source question style: labelling, prediction, data recording, pattern description, explanation and later calculation. [S02]</p>
+  </main>
+</body>
+</html>

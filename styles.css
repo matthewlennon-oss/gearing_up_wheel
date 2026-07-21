@@ -1,0 +1,446 @@
+:root {
+  --ink: #17252a;
+  --muted: #53676d;
+  --paper: #f6f8f1;
+  --panel: #ffffff;
+  --line: #cfdbd3;
+  --wheel: #2d7dd2;
+  --wheel-soft: #d9ecff;
+  --axle: #f28c28;
+  --axle-soft: #ffe2c4;
+  --force: #1b8a5a;
+  --berry: #7d4aa5;
+  --shadow: 0 16px 42px rgba(23, 37, 42, 0.12);
+  --radius: 8px;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
+  letter-spacing: 0;
+  background:
+    linear-gradient(90deg, rgba(45, 125, 210, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(45, 125, 210, 0.06) 1px, transparent 1px),
+    var(--paper);
+  background-size: 30px 30px;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: var(--ink);
+  text-underline-offset: 0.18em;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(242, 140, 40, 0.55);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+  line-height: 1.08;
+}
+
+h2 {
+  margin-bottom: 0.45rem;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.18;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  transform: translateY(-140%);
+  background: var(--ink);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  background: rgba(246, 248, 241, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.brand-icon {
+  flex: 0 0 auto;
+  width: 2.6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--wheel);
+  background:
+    radial-gradient(circle at center, var(--axle) 0 22%, transparent 23%),
+    conic-gradient(from 0deg, transparent 0 70deg, rgba(23, 37, 42, 0.22) 70deg 80deg, transparent 80deg 160deg, rgba(23, 37, 42, 0.22) 160deg 170deg, transparent 170deg 250deg, rgba(23, 37, 42, 0.22) 250deg 260deg, transparent 260deg 340deg, rgba(23, 37, 42, 0.22) 340deg 350deg, transparent 350deg);
+}
+
+.eyebrow {
+  margin-bottom: 0.2rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+nav a {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.4rem 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sim-shell {
+  display: grid;
+  grid-template-columns: minmax(250px, 320px) minmax(360px, 1fr) minmax(230px, 300px);
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+}
+
+.intro,
+.radius-panel,
+.machine-panel,
+.reading-panel {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.intro {
+  grid-column: 1 / -1;
+  padding: 1rem;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.radius-panel,
+.reading-panel {
+  align-self: start;
+  padding: 1rem;
+}
+
+.radius-options {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.radius-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 4.2rem;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.radius-option span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.radius-option strong {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+}
+
+.radius-option.is-selected {
+  border-color: var(--wheel);
+  background: var(--wheel-soft);
+}
+
+.machine-panel {
+  overflow: hidden;
+}
+
+.machine-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.spin-button {
+  min-height: 3rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-weight: 900;
+}
+
+.machine-stage {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.machine-svg {
+  display: block;
+  width: 100%;
+  min-height: 320px;
+  aspect-ratio: 620 / 420;
+}
+
+.ground line {
+  stroke: #d5ded7;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.wheel {
+  fill: var(--wheel-soft);
+  stroke: var(--wheel);
+  stroke-width: 12;
+  transition: r 220ms ease;
+}
+
+.axle {
+  fill: var(--axle-soft);
+  stroke: var(--axle);
+  stroke-width: 8;
+}
+
+.spoke {
+  stroke: rgba(23, 37, 42, 0.55);
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: x1 220ms ease, x2 220ms ease, y1 220ms ease, y2 220ms ease;
+}
+
+.rim-dot {
+  fill: var(--force);
+  stroke: #fff;
+  stroke-width: 3;
+  transition: cx 220ms ease;
+}
+
+.rotor.is-spinning {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spinOnce 950ms cubic-bezier(.2, .75, .15, 1);
+}
+
+.svg-label {
+  fill: var(--ink);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.force-label {
+  fill: var(--force);
+}
+
+.force-line {
+  fill: none;
+  stroke: var(--force);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.reading-panel {
+  min-height: 310px;
+}
+
+.gauge {
+  display: grid;
+  min-height: 10rem;
+  place-items: center;
+  margin-top: 1rem;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at center, #fff 0 42%, transparent 43%),
+    conic-gradient(var(--force) 0 225deg, #e7ede8 225deg);
+  text-align: center;
+}
+
+.gauge span {
+  max-width: 11rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.gauge strong {
+  font-family: var(--mono);
+  font-size: clamp(2.5rem, 7vw, 4.6rem);
+  line-height: 1;
+}
+
+.selected-radius {
+  margin: 1rem 0 0;
+}
+
+.selected-radius div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.85rem;
+}
+
+.selected-radius dt {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.selected-radius dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.footer-note {
+  padding: 0 2rem 2rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 980px) {
+  .sim-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .radius-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar,
+  .machine-heading {
+    display: block;
+  }
+
+  nav {
+    justify-content: flex-start;
+    margin-top: 0.85rem;
+  }
+
+  .sim-shell {
+    padding: 0.75rem;
+  }
+
+  .radius-options {
+    grid-template-columns: 1fr;
+  }
+
+  .spin-button {
+    width: 100%;
+    margin-top: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotor.is-spinning {
+    animation-duration: 1ms;
+  }
+
+  .wheel,
+  .spoke,
+  .rim-dot {
+    transition: none;
+  }
+}
+
+@media print {
+  .topbar,
+  .radius-panel,
+  .spin-button,
+  .footer-note {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .sim-shell {
+    display: block;
+  }
+
+  .intro,
+  .machine-panel,
+  .reading-panel {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wheel Radius Force Spinner</title>
+  <meta name="description" content="A simple Year 7 wheel-and-axle simulator focused on wheel radius and force in Newtons.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#simulator">Skip to simulator</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon" aria-hidden="true"></span>
+      <div>
+        <p class="eyebrow">Year 7 simple machines</p>
+        <h1>Wheel Radius Force Spinner</h1>
+      </div>
+    </div>
+    <nav aria-label="Lesson resources">
+      <a href="worksheet.html">Worksheet</a>
+      <a href="teacher-guide.html">Teacher guide</a>
+      <a href="README.md">Repo notes</a>
+    </nav>
+  </header>
+
+  <main id="simulator" class="sim-shell">
+    <section class="intro">
+      <p class="eyebrow">Investigation question</p>
+      <h2>How does the radius of the wheel affect the force needed to turn it?</h2>
+      <p>Choose one wheel size, spin the wheel, then record the force reading in Newtons.</p>
+    </section>
+
+    <section class="radius-panel" aria-labelledby="radius-title">
+      <p class="eyebrow">Choose wheel radius</p>
+      <h2 id="radius-title">One variable: wheel size</h2>
+      <div class="radius-options" role="radiogroup" aria-label="Wheel radius">
+        <button class="radius-option" type="button" data-radius="4" aria-pressed="false">
+          <span>Small</span>
+          <strong>4 cm</strong>
+        </button>
+        <button class="radius-option is-selected" type="button" data-radius="8" aria-pressed="true">
+          <span>Medium</span>
+          <strong>8 cm</strong>
+        </button>
+        <button class="radius-option" type="button" data-radius="12" aria-pressed="false">
+          <span>Large</span>
+          <strong>12 cm</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="machine-panel" aria-labelledby="machine-title">
+      <div class="machine-heading">
+        <div>
+          <p class="eyebrow">Wheel and axle</p>
+          <h2 id="machine-title">Spin once, then read the force</h2>
+        </div>
+        <button id="spinButton" class="spin-button" type="button">Spin wheel</button>
+      </div>
+
+      <div class="machine-stage">
+        <svg class="machine-svg" viewBox="0 0 620 420" role="img" aria-labelledby="svgTitle svgDesc">
+          <title id="svgTitle">Wheel and axle model</title>
+          <desc id="svgDesc">A wheel attached to a smaller axle. The wheel size changes when a radius option is selected.</desc>
+          <g class="ground">
+            <line x1="86" y1="340" x2="534" y2="340"></line>
+          </g>
+          <g id="rotor" class="rotor">
+            <circle id="wheel" class="wheel" cx="275" cy="210" r="112"></circle>
+            <circle id="axle" class="axle" cx="275" cy="210" r="34"></circle>
+            <line id="spokeOne" class="spoke" x1="163" y1="210" x2="387" y2="210"></line>
+            <line id="spokeTwo" class="spoke" x1="275" y1="98" x2="275" y2="322"></line>
+            <circle id="rimDot" class="rim-dot" cx="387" cy="210" r="8"></circle>
+          </g>
+          <text id="wheelLabel" class="svg-label" x="410" y="122">wheel</text>
+          <text class="svg-label" x="320" y="202">axle</text>
+          <path class="force-line" d="M 102 210 L 154 210"></path>
+          <text class="svg-label force-label" x="84" y="198">turning force</text>
+        </svg>
+      </div>
+    </section>
+
+    <aside class="reading-panel" aria-labelledby="reading-title">
+      <p class="eyebrow">Reading</p>
+      <h2 id="reading-title">Force needed</h2>
+      <div class="gauge" aria-live="polite">
+        <span id="readingPrompt">Spin the wheel to take a reading.</span>
+        <strong id="forceReading" hidden>15 N</strong>
+      </div>
+      <dl class="selected-radius">
+        <div>
+          <dt>Wheel radius</dt>
+          <dd id="radiusReading">8 cm</dd>
+        </div>
+      </dl>
+    </aside>
+  </main>
+
+  <footer class="footer-note">
+    <p>This simple model focuses only on wheel radius and force. Extra calculations are done later on the worksheet.</p>
+  </footer>
+
+  <script src="model.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

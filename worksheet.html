@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worksheet - Wheel Radius Force Spinner</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: #fff; }
+    .sheet { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .sheet h1 { font-size: 1.8rem; }
+    .sheet h2 { margin-top: 1.5rem; border-top: 2px solid var(--line); padding-top: 1rem; }
+    .meta { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 1rem; margin: 1rem 0; }
+    .line { border-bottom: 1px solid var(--ink); min-height: 1.8rem; }
+    .question { margin: 1rem 0; }
+    .answer-lines { display: grid; gap: 1rem; margin-top: .7rem; }
+    .answer-lines span { border-bottom: 1px solid var(--ink); min-height: 1.45rem; }
+    .blank-box { height: 8rem; border: 1px solid var(--line); border-radius: 6px; }
+    .print-actions { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    .sheet table { min-width: 0; }
+    @media (max-width: 650px) {
+      .sheet { padding: 1rem; }
+      .meta { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .print-actions { display: none; }
+      .sheet { padding: 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="print-actions">
+      <a href="index.html">Back to simulator</a>
+      <button class="spin-button" onclick="window.print()" type="button">Print worksheet</button>
+    </div>
+
+    <h1>Wheel Radius Force Spinner - Student Worksheet</h1>
+    <p><strong>Learning intention:</strong> To investigate how changing the radius of a wheel changes the force needed to turn it.</p>
+
+    <div class="meta">
+      <div>Name <div class="line"></div></div>
+      <div>Class <div class="line"></div></div>
+      <div>Date <div class="line"></div></div>
+    </div>
+
+    <h2>Remember</h2>
+
+    <div class="question">
+      <p><strong>Q1 - Label the model (2 marks)</strong></p>
+      <p>Open the simulator. Sketch the model and label the <strong>wheel</strong> and the <strong>axle</strong>.</p>
+      <div class="blank-box"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>Q2 - Predict (1 mark)</strong></p>
+      <p>Which wheel radius do you think will need the least force to turn?</p>
+      <p>Circle one: <strong>4 cm</strong> / <strong>8 cm</strong> / <strong>12 cm</strong></p>
+    </div>
+
+    <h2>Investigation</h2>
+
+    <div class="question">
+      <p><strong>Q3 - Record your force readings (3 marks)</strong></p>
+      <p>For each wheel size, select the radius, spin the wheel once, then record the force needed.</p>
+      <table>
+        <thead>
+          <tr><th>Wheel radius</th><th>Force needed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>4 cm</td><td>__________ N</td></tr>
+          <tr><td>8 cm</td><td>__________ N</td></tr>
+          <tr><td>12 cm</td><td>__________ N</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="question">
+      <p><strong>Q4 - Describe the pattern (2 marks)</strong></p>
+      <p>As the wheel radius increased, what happened to the force needed? Use two numbers from your results.</p>
+      <div class="answer-lines"><span></span><span></span></div>
+    </div>
+
+    <div class="question">
+      <p><strong>Q5 - Explain (2 marks)</strong></p>
+      <p>Why can a larger wheel make turning the axle easier?</p>
+      <div class="answer-lines"><span></span><span></span></div>
+    </div>
+
+    <h2>Later Calculation</h2>
+
+    <div class="question">
+      <p><strong>Q6 - Mechanical advantage (extension)</strong></p>
+      <p>Your teacher will use this section later. In this model, the resistance was fixed at <strong>60 N</strong>. Calculate:</p>
+      <p><strong>mechanical advantage = resistance force / force needed</strong></p>
+      <table>
+        <thead>
+          <tr><th>Wheel radius</th><th>Force needed</th><th>Mechanical advantage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>4 cm</td><td>__________ N</td><td>__________</td></tr>
+          <tr><td>8 cm</td><td>__________ N</td><td>__________</td></tr>
+          <tr><td>12 cm</td><td>__________ N</td><td>__________</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Exit Response</h2>
+    <p>In one sentence, explain what you learned about wheel radius and force.</p>
+    <div class="answer-lines"><span></span><span></span></div>
+  </main>
+</body>
+</html>
